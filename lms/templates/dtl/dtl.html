@@ -1,0 +1,76 @@
+
+{% extends "partials/base.html" %}
+
+
+{% block title %}Cart{% endblock title %}
+
+
+{% block body %}
+
+    {% include "partials/header.html" %}
+    
+    <h2> {{ user }} </h2>
+    
+    <div>
+        <ol>
+        Cart item: {% for item in cart %}
+            <li>
+                    {{ item }}
+            </li>
+        {% endfor %}
+        </ol>
+                    
+
+        {% if is_favorite %}
+            <p>Item marked as favorite</p>
+        {% else %}
+            <p>Item is not marked as favorite</p>
+        {% endif %}
+
+        <p>you have {{ no_of_items }} items in your cart</p>
+
+        
+    </div>
+
+{% endblock body %}
+
+
+{% comment %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> {{ user }} </h2>
+    
+    <div>
+        <ol>
+        Cart item: {% for item in cart %}
+            <li>
+                    {{ item }}
+            </li>
+        {% endfor %}
+        </ol>
+                    
+
+        {% if is_favorite %}
+            <p>Item marked as favorite</p>
+        {% else %}
+            <p>Item is not marked as favorite</p>
+        {% endif %}
+
+        <p>you have {{ no_of_items }} items in your cart</p>
+
+        
+    </div>
+
+</body>
+</html>
+
+{% block  %}
+
+{% endblock  %} {% endcomment %}
